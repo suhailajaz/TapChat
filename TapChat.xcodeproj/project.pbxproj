@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2236EC2AE937D900D6BA4A /* RegisterValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2236EB2AE937D900D6BA4A /* RegisterValidation.swift */; };
+		1A2236EE2AE937FF00D6BA4A /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2236ED2AE937FF00D6BA4A /* RegisterRequest.swift */; };
+		1A2236F12AE96CB900D6BA4A /* RegisterViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2236F02AE96CB900D6BA4A /* RegisterViewControllerExtension.swift */; };
 		1A44B0942AE7F06D0077122E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0932AE7F06D0077122E /* AppDelegate.swift */; };
 		1A44B0962AE7F06D0077122E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0952AE7F06D0077122E /* SceneDelegate.swift */; };
 		1A44B0982AE7F06D0077122E /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0972AE7F06D0077122E /* ConversationsViewController.swift */; };
@@ -20,9 +23,18 @@
 		1A44B0BA2AE7F8FE0077122E /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0B92AE7F8FE0077122E /* VideoPlayerViewController.swift */; };
 		1A44B0BC2AE7F90C0077122E /* NewConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0BB2AE7F90C0077122E /* NewConversationsViewController.swift */; };
 		1A44B0BE2AE7F9220077122E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0BD2AE7F9220077122E /* ProfileViewController.swift */; };
+		1A44B0C12AE810680077122E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0C02AE810680077122E /* UIViewExtensions.swift */; };
+		1A93DD7E2AE90BBE00359FB1 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD7D2AE90BBE00359FB1 /* LoginRequest.swift */; };
+		1A93DD802AE90C1600359FB1 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD7F2AE90C1600359FB1 /* ValidationResult.swift */; };
+		1A93DD832AE90C6300359FB1 /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD822AE90C6300359FB1 /* LoginValidation.swift */; };
+		1A93DD862AE90CF700359FB1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD852AE90CF700359FB1 /* StringExtensions.swift */; };
+		1A93DD882AE90FF700359FB1 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD872AE90FF700359FB1 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A2236EB2AE937D900D6BA4A /* RegisterValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterValidation.swift; sourceTree = "<group>"; };
+		1A2236ED2AE937FF00D6BA4A /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		1A2236F02AE96CB900D6BA4A /* RegisterViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerExtension.swift; sourceTree = "<group>"; };
 		1A44B0902AE7F06D0077122E /* TapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A44B0932AE7F06D0077122E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A44B0952AE7F06D0077122E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +50,12 @@
 		1A44B0B92AE7F8FE0077122E /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		1A44B0BB2AE7F90C0077122E /* NewConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationsViewController.swift; sourceTree = "<group>"; };
 		1A44B0BD2AE7F9220077122E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1A44B0C02AE810680077122E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		1A93DD7D2AE90BBE00359FB1 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		1A93DD7F2AE90C1600359FB1 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		1A93DD822AE90C6300359FB1 /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
+		1A93DD852AE90CF700359FB1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		1A93DD872AE90FF700359FB1 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,8 @@
 		1A44B0922AE7F06D0077122E /* TapChat */ = {
 			isa = PBXGroup;
 			children = (
+				1A93DD842AE90CDB00359FB1 /* Extensions */,
+				1A93DD812AE90C4200359FB1 /* Validations */,
 				1A44B0AA2AE7F2460077122E /* Resources */,
 				1A44B0AC2AE7F2640077122E /* ViewModels */,
 				1A44B0AB2AE7F2510077122E /* Models */,
@@ -93,6 +113,7 @@
 		1A44B0AB2AE7F2510077122E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A93DD7C2AE90BA200359FB1 /* Login */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,8 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				1A44B0972AE7F06D0077122E /* ConversationsViewController.swift */,
-				1A44B0B32AE7F8C80077122E /* LoginViewController.swift */,
-				1A44B0B52AE7F8D40077122E /* RegisterViewController.swift */,
+				1A44B0BF2AE7FED50077122E /* LoginAndRegister */,
 				1A44B0B72AE7F8E50077122E /* PhotoViewerViewController.swift */,
 				1A44B0B92AE7F8FE0077122E /* VideoPlayerViewController.swift */,
 				1A44B0BB2AE7F90C0077122E /* NewConversationsViewController.swift */,
@@ -134,6 +154,45 @@
 				1A44B0A12AE7F06E0077122E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1A44B0BF2AE7FED50077122E /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				1A44B0B32AE7F8C80077122E /* LoginViewController.swift */,
+				1A44B0B52AE7F8D40077122E /* RegisterViewController.swift */,
+				1A2236F02AE96CB900D6BA4A /* RegisterViewControllerExtension.swift */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		1A93DD7C2AE90BA200359FB1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1A93DD7D2AE90BBE00359FB1 /* LoginRequest.swift */,
+				1A93DD7F2AE90C1600359FB1 /* ValidationResult.swift */,
+				1A2236ED2AE937FF00D6BA4A /* RegisterRequest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1A93DD812AE90C4200359FB1 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				1A93DD822AE90C6300359FB1 /* LoginValidation.swift */,
+				1A2236EB2AE937D900D6BA4A /* RegisterValidation.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		1A93DD842AE90CDB00359FB1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A93DD852AE90CF700359FB1 /* StringExtensions.swift */,
+				1A93DD872AE90FF700359FB1 /* ViewControllerExtension.swift */,
+				1A44B0C02AE810680077122E /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,14 +267,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A44B0BC2AE7F90C0077122E /* NewConversationsViewController.swift in Sources */,
+				1A93DD802AE90C1600359FB1 /* ValidationResult.swift in Sources */,
+				1A2236EE2AE937FF00D6BA4A /* RegisterRequest.swift in Sources */,
 				1A44B0982AE7F06D0077122E /* ConversationsViewController.swift in Sources */,
 				1A44B0BE2AE7F9220077122E /* ProfileViewController.swift in Sources */,
+				1A93DD882AE90FF700359FB1 /* ViewControllerExtension.swift in Sources */,
+				1A2236F12AE96CB900D6BA4A /* RegisterViewControllerExtension.swift in Sources */,
+				1A93DD7E2AE90BBE00359FB1 /* LoginRequest.swift in Sources */,
 				1A44B09E2AE7F06D0077122E /* TapChat.xcdatamodeld in Sources */,
 				1A44B0942AE7F06D0077122E /* AppDelegate.swift in Sources */,
 				1A44B0B82AE7F8E50077122E /* PhotoViewerViewController.swift in Sources */,
 				1A44B0B62AE7F8D40077122E /* RegisterViewController.swift in Sources */,
 				1A44B0BA2AE7F8FE0077122E /* VideoPlayerViewController.swift in Sources */,
+				1A93DD832AE90C6300359FB1 /* LoginValidation.swift in Sources */,
 				1A44B0B42AE7F8C80077122E /* LoginViewController.swift in Sources */,
+				1A93DD862AE90CF700359FB1 /* StringExtensions.swift in Sources */,
+				1A44B0C12AE810680077122E /* UIViewExtensions.swift in Sources */,
+				1A2236EC2AE937D900D6BA4A /* RegisterValidation.swift in Sources */,
 				1A44B0962AE7F06D0077122E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +443,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,6 +471,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
