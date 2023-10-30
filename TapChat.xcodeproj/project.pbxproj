@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0130402AE97D24002F75AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A01303F2AE97D24002F75AF /* GoogleService-Info.plist */; };
+		1A0130422AE98331002F75AF /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0130412AE98331002F75AF /* AuthManager.swift */; };
 		1A2236EC2AE937D900D6BA4A /* RegisterValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2236EB2AE937D900D6BA4A /* RegisterValidation.swift */; };
 		1A2236EE2AE937FF00D6BA4A /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2236ED2AE937FF00D6BA4A /* RegisterRequest.swift */; };
 		1A2236F12AE96CB900D6BA4A /* RegisterViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2236F02AE96CB900D6BA4A /* RegisterViewControllerExtension.swift */; };
+		1A2F59202AEFB2DF006B3418 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F591F2AEFB2DF006B3418 /* DatabaseManager.swift */; };
 		1A44B0942AE7F06D0077122E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0932AE7F06D0077122E /* AppDelegate.swift */; };
 		1A44B0962AE7F06D0077122E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0952AE7F06D0077122E /* SceneDelegate.swift */; };
 		1A44B0982AE7F06D0077122E /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44B0972AE7F06D0077122E /* ConversationsViewController.swift */; };
@@ -29,12 +32,16 @@
 		1A93DD832AE90C6300359FB1 /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD822AE90C6300359FB1 /* LoginValidation.swift */; };
 		1A93DD862AE90CF700359FB1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD852AE90CF700359FB1 /* StringExtensions.swift */; };
 		1A93DD882AE90FF700359FB1 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD872AE90FF700359FB1 /* ViewControllerExtension.swift */; };
+		2341E9BAB235AD437CA44D90 /* Pods_TapChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1995C0FFBD147B013FBFFB /* Pods_TapChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A01303F2AE97D24002F75AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A0130412AE98331002F75AF /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		1A2236EB2AE937D900D6BA4A /* RegisterValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterValidation.swift; sourceTree = "<group>"; };
 		1A2236ED2AE937FF00D6BA4A /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		1A2236F02AE96CB900D6BA4A /* RegisterViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerExtension.swift; sourceTree = "<group>"; };
+		1A2F591F2AEFB2DF006B3418 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		1A44B0902AE7F06D0077122E /* TapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A44B0932AE7F06D0077122E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A44B0952AE7F06D0077122E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +63,9 @@
 		1A93DD822AE90C6300359FB1 /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 		1A93DD852AE90CF700359FB1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		1A93DD872AE90FF700359FB1 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		77E775DDDAB5661FC888F72C /* Pods-TapChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapChat.release.xcconfig"; path = "Target Support Files/Pods-TapChat/Pods-TapChat.release.xcconfig"; sourceTree = "<group>"; };
+		7B1995C0FFBD147B013FBFFB /* Pods_TapChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40B15F8F440AA0514D5F5EE /* Pods-TapChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapChat.debug.xcconfig"; path = "Target Support Files/Pods-TapChat/Pods-TapChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2341E9BAB235AD437CA44D90 /* Pods_TapChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,8 @@
 			children = (
 				1A44B0922AE7F06D0077122E /* TapChat */,
 				1A44B0912AE7F06D0077122E /* Products */,
+				D62E1256AFA0C99FA1D0CF6C /* Pods */,
+				70DC659DCC0A11F3E5D0BA9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +109,7 @@
 				1A44B0AD2AE7F2780077122E /* Views */,
 				1A44B0B02AE7F29C0077122E /* Controllers */,
 				1A44B0A42AE7F06E0077122E /* Info.plist */,
+				1A01303F2AE97D24002F75AF /* GoogleService-Info.plist */,
 				1A44B09C2AE7F06D0077122E /* TapChat.xcdatamodeld */,
 			);
 			path = TapChat;
@@ -106,6 +120,8 @@
 			children = (
 				1A44B0932AE7F06D0077122E /* AppDelegate.swift */,
 				1A44B0952AE7F06D0077122E /* SceneDelegate.swift */,
+				1A0130412AE98331002F75AF /* AuthManager.swift */,
+				1A2F591F2AEFB2DF006B3418 /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -113,7 +129,7 @@
 		1A44B0AB2AE7F2510077122E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A93DD7C2AE90BA200359FB1 /* Login */,
+				1A93DD7C2AE90BA200359FB1 /* LoginAndRegister */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,14 +182,14 @@
 			path = LoginAndRegister;
 			sourceTree = "<group>";
 		};
-		1A93DD7C2AE90BA200359FB1 /* Login */ = {
+		1A93DD7C2AE90BA200359FB1 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
 				1A93DD7D2AE90BBE00359FB1 /* LoginRequest.swift */,
-				1A93DD7F2AE90C1600359FB1 /* ValidationResult.swift */,
 				1A2236ED2AE937FF00D6BA4A /* RegisterRequest.swift */,
+				1A93DD7F2AE90C1600359FB1 /* ValidationResult.swift */,
 			);
-			path = Login;
+			path = LoginAndRegister;
 			sourceTree = "<group>";
 		};
 		1A93DD812AE90C4200359FB1 /* Validations */ = {
@@ -195,6 +211,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		70DC659DCC0A11F3E5D0BA9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B1995C0FFBD147B013FBFFB /* Pods_TapChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D62E1256AFA0C99FA1D0CF6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F40B15F8F440AA0514D5F5EE /* Pods-TapChat.debug.xcconfig */,
+				77E775DDDAB5661FC888F72C /* Pods-TapChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A44B0A72AE7F06E0077122E /* Build configuration list for PBXNativeTarget "TapChat" */;
 			buildPhases = (
+				2E82A28C221581A310EC3F72 /* [CP] Check Pods Manifest.lock */,
 				1A44B08C2AE7F06D0077122E /* Sources */,
 				1A44B08D2AE7F06D0077122E /* Frameworks */,
 				1A44B08E2AE7F06D0077122E /* Resources */,
+				71522A6A7842EC815C2CFF70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,12 +289,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A44B0A32AE7F06E0077122E /* LaunchScreen.storyboard in Resources */,
+				1A0130402AE97D24002F75AF /* GoogleService-Info.plist in Resources */,
 				1A44B0A02AE7F06E0077122E /* Assets.xcassets in Resources */,
 				1A44B09B2AE7F06D0077122E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E82A28C221581A310EC3F72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TapChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71522A6A7842EC815C2CFF70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TapChat/Pods-TapChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TapChat/Pods-TapChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TapChat/Pods-TapChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A44B08C2AE7F06D0077122E /* Sources */ = {
@@ -275,6 +353,7 @@
 				1A2236F12AE96CB900D6BA4A /* RegisterViewControllerExtension.swift in Sources */,
 				1A93DD7E2AE90BBE00359FB1 /* LoginRequest.swift in Sources */,
 				1A44B09E2AE7F06D0077122E /* TapChat.xcdatamodeld in Sources */,
+				1A0130422AE98331002F75AF /* AuthManager.swift in Sources */,
 				1A44B0942AE7F06D0077122E /* AppDelegate.swift in Sources */,
 				1A44B0B82AE7F8E50077122E /* PhotoViewerViewController.swift in Sources */,
 				1A44B0B62AE7F8D40077122E /* RegisterViewController.swift in Sources */,
@@ -285,6 +364,7 @@
 				1A44B0C12AE810680077122E /* UIViewExtensions.swift in Sources */,
 				1A2236EC2AE937D900D6BA4A /* RegisterValidation.swift in Sources */,
 				1A44B0962AE7F06D0077122E /* SceneDelegate.swift in Sources */,
+				1A2F59202AEFB2DF006B3418 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +427,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -410,7 +490,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -431,6 +511,7 @@
 		};
 		1A44B0A82AE7F06E0077122E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F40B15F8F440AA0514D5F5EE /* Pods-TapChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +540,7 @@
 		};
 		1A44B0A92AE7F06E0077122E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77E775DDDAB5661FC888F72C /* Pods-TapChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
