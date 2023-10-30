@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 // MARK: - Handles Image Picking and Setting
 extension RegisterViewController{
     
@@ -48,7 +49,9 @@ extension RegisterViewController{
 extension RegisterViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+       
         picker.dismiss(animated: true)
+        
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
             return
         }

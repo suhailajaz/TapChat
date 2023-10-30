@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController{
     
     @IBAction func loginTapped(_ sender: Any) {
+        
         txtEmail.resignFirstResponder()
         txtPassword.resignFirstResponder()
         
@@ -40,14 +41,20 @@ extension LoginViewController{
         if(validationResult.success){
             //login validation is successful
             //firebase login
+            AuthManager.shared.loginUser(request) { success in
+                if success{
+                    self.navigationController?.dismiss(animated: true)
+                }
+            }
             
         }else{
             self.displayAlert(alertMessage: validationResult.errorMessage!)
         }
-        
+
     }
     
     @objc func didTapRegister(){
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as! RegisterViewController
         vc.title = "Create Account"
         navigationController?.pushViewController(vc, animated: true)
@@ -57,7 +64,9 @@ extension LoginViewController{
 
 // MARK: - TextField Delegate
 extension LoginViewController: UITextFieldDelegate{
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
         if textField == txtEmail{
             txtPassword.becomeFirstResponder()
         }else if textField == txtPassword{
@@ -65,4 +74,5 @@ extension LoginViewController: UITextFieldDelegate{
         }
         return true
     }
+    
 }

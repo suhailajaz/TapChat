@@ -48,10 +48,27 @@ extension RegisterViewController{
         let request = RegisterRequest(userEmail: txtEmail.text!, userPassWord: txtPassword.text!, fName: txtFirstName.text!, lName: txtLastName.text!)
         let validation = RegisterValidation()
         let validationResult = validation.validate(request: request)
-        
+         
         if(validationResult.success){
-            //login validation is successful
-            //firebase login
+            //register validation is successful on the client side
+            
+            //checking if the user alread exists in the realtime database
+            DatabaseManager.shared.userExists(with: request.userEmail) { exists in
+               
+                guard !exists else {
+                    //user alreay exists
+                    self.displayAlert(alertMessage: "Looks like a user account for this email id already exists!")
+                    return
+                }
+                //aading the user to firebase auth
+                AuthManager.shared.registerUser(request) { success in
+                    if success{
+                        //Adding the newly registered user in firebase auth to realtime database
+                        DatabaseManager.shared.insertUser(user: request)
+                        self.navigationController?.dismiss(animated: true)
+                    }
+                }
+            }
             
         }else{
             self.displayAlert(alertMessage: validationResult.errorMessage!)
@@ -59,8 +76,8 @@ extension RegisterViewController{
         
     }
     
-  
 }
+
 // MARK: - User Defined Methods
 extension RegisterViewController{
     func addTapGestureToProfileImage(){
@@ -73,9 +90,10 @@ extension RegisterViewController{
     }
 }
 
+
 // MARK: - TextField Delegate
 extension RegisterViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField:  UITextField) -> Bool {
         if textField == txtFirstName{
             txtLastName.becomeFirstResponder()
         }else if textField == txtLastName{
