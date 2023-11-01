@@ -39,6 +39,14 @@ struct AuthManager{
         
     }
     
+    func logoutUser(completion: @escaping ((Bool)->Void)){
+        do{
+            try FirebaseAuth.Auth.auth().signOut()
+            completion(true)
+        }catch{
+            print("Failed to logout user.")
+        }
+    }
     func checkLoginState()->Bool{
         if FirebaseAuth.Auth.auth().currentUser == nil{
             return false

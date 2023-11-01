@@ -15,5 +15,11 @@ extension UIViewController{
         self.present(alert, animated: true)
     }
     
+    func showLoginScreen(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController,animated: false)
+    }
     
 }

@@ -7,17 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF539799-5C58-47B6-86D5-B90DD33BF65C"
+            uuid = "E9ADECCE-97A0-4C35-BCD3-7045C58BB07E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TapChat/Resources/DatabaseManager.swift"
+            filePath = "TapChat/Controllers/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "userExists(with:completion:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E9ADECCE-97A0-4C35-BCD3-7045C58BB07E - 3aec229800a19290"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TapChat.ProfileViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "E9ADECCE-97A0-4C35-BCD3-7045C58BB07E - 3aec229800a1926f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TapChat.ProfileViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "E9ADECCE-97A0-4C35-BCD3-7045C58BB07E - 3aec229800a1926f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TapChat.ProfileViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -13,10 +13,6 @@ final class DatabaseManager{
     static let shared = DatabaseManager()
     private let database = Database.database().reference()
     
-    public func test(){
-        database.child("aaliya").setValue(["age":11,"address":"model town","single": true])
-    }
-    
 }
 // MARK: - Account Management
 extension DatabaseManager{
