@@ -6,9 +6,18 @@ target 'TapChat' do
   use_frameworks!
 
   # Pods for TapChat
+
+#Firebase
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+
+#General
+pod 'MessageKit'
+pod 'RealmSwift'
+pod 'SDWebImage'
+	
+
 
  post_install do |installer|
     xcode_base_version = `xcodebuild -version | grep 'Xcode' | awk '{print $2}' | cut -d . -f 1`
@@ -27,3 +36,4 @@ pod 'Firebase/Database'
 end
 
 end
+

@@ -7,12 +7,13 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet var txtEmail: UITextField!
     @IBOutlet var txtPassword: UITextField!
     @IBOutlet var btnLogin: UIButton!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +31,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController{
     
     @IBAction func loginTapped(_ sender: Any) {
-        
+     
         txtEmail.resignFirstResponder()
         txtPassword.resignFirstResponder()
         

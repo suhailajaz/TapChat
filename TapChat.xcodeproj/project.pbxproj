@@ -32,6 +32,7 @@
 		1A93DD832AE90C6300359FB1 /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD822AE90C6300359FB1 /* LoginValidation.swift */; };
 		1A93DD862AE90CF700359FB1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD852AE90CF700359FB1 /* StringExtensions.swift */; };
 		1A93DD882AE90FF700359FB1 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93DD872AE90FF700359FB1 /* ViewControllerExtension.swift */; };
+		1AE2581D2AF295DF00404ACF /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1AE2581C2AF295DF00404ACF /* JGProgressHUD */; };
 		2341E9BAB235AD437CA44D90 /* Pods_TapChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1995C0FFBD147B013FBFFB /* Pods_TapChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE2581D2AF295DF00404ACF /* JGProgressHUD in Frameworks */,
 				2341E9BAB235AD437CA44D90 /* Pods_TapChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +248,9 @@
 			dependencies = (
 			);
 			name = TapChat;
+			packageProductDependencies = (
+				1AE2581C2AF295DF00404ACF /* JGProgressHUD */,
+			);
 			productName = TapChat;
 			productReference = 1A44B0902AE7F06D0077122E /* TapChat.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +279,9 @@
 				Base,
 			);
 			mainGroup = 1A44B0872AE7F06D0077122E;
+			packageReferences = (
+				1AE2581B2AF295DF00404ACF /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+			);
 			productRefGroup = 1A44B0912AE7F06D0077122E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -589,6 +597,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1AE2581B2AF295DF00404ACF /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1AE2581C2AF295DF00404ACF /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AE2581B2AF295DF00404ACF /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1A44B09C2AE7F06D0077122E /* TapChat.xcdatamodeld */ = {
