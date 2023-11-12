@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
     
@@ -15,6 +16,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet var txtEmail: UITextField!
     @IBOutlet var txtPassword: UITextField!
     @IBOutlet var imgProfile: UIImageView!
+    
+    let spinner = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +33,16 @@ class RegisterViewController: UIViewController {
         
         
         addTapGestureToProfileImage()
-
+        
     }
     
 }
 
 // MARK: - IBACTIONS
 extension RegisterViewController{
- 
+    
     @IBAction func registerTapped(_ sender: Any) {
-        
+        let newUserImage = imgProfile.image
         txtFirstName.resignFirstResponder()
         txtLastName.resignFirstResponder()
         txtEmail.resignFirstResponder()
@@ -48,29 +51,52 @@ extension RegisterViewController{
         let request = RegisterRequest(userEmail: txtEmail.text!, userPassWord: txtPassword.text!, fName: txtFirstName.text!, lName: txtLastName.text!)
         let validation = RegisterValidation()
         let validationResult = validation.validate(request: request)
-         
+        spinner.show(in: view)
         if(validationResult.success){
             //register validation is successful on the client side
             
             //checking if the user alread exists in the realtime database
             DatabaseManager.shared.userExists(with: request.userEmail) { exists in
-               
+                
+                
                 guard !exists else {
+                    self.spinner.dismiss()
                     //user alreay exists
                     self.displayAlert(alertMessage: "Looks like a user account for this email id already exists!")
                     return
                 }
                 //aading the user to firebase auth
-                AuthManager.shared.registerUser(request) { success in
+                AuthManager.shared.registerUser(request) { [weak self] success in
+                    self?.spinner.dismiss()
                     if success{
                         //Adding the newly registered user in firebase auth to realtime database
-                        DatabaseManager.shared.insertUser(user: request)
-                        self.navigationController?.dismiss(animated: true)
+                        DatabaseManager.shared.insertUser(user: request) { success in
+                            if success{
+                                //upload image
+                                guard let image = newUserImage ,let data = image.pngData() else {
+                                    print("Failed to fetched image from the image view in register screen")
+                                    return
+                                }
+                                let fileName = request.profilePictureFileName
+                                
+                                StorageManager.shared.uploadProfilepicture(with: data, fileName: fileName) { result in
+                                    switch result{
+                                    case .success(let downloadUrl):
+                                        UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                        print(downloadUrl)
+                                    case .failure(let error):
+                                        print("Storage manager error: \(error)")
+                                    }
+                                }
+                            }
+                        }
+                        self?.navigationController?.dismiss(animated: true)
                     }
                 }
             }
             
         }else{
+            self.spinner.dismiss()
             self.displayAlert(alertMessage: validationResult.errorMessage!)
         }
         

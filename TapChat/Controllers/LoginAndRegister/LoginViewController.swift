@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var txtPassword: UITextField!
     @IBOutlet var btnLogin: UIButton!
   
+    let spinner = JGProgressHUD(style: .dark)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,16 +41,20 @@ extension LoginViewController{
         let validation = LoginValidation()
         let validationResult = validation.validate(request: request)
         
+        spinner.show(in: view)
+        
         if(validationResult.success){
             //login validation is successful
             //firebase login
             AuthManager.shared.loginUser(request) { success in
+                self.spinner.dismiss()
                 if success{
                     self.navigationController?.dismiss(animated: true)
                 }
             }
             
         }else{
+            self.spinner.dismiss()
             self.displayAlert(alertMessage: validationResult.errorMessage!)
         }
 
