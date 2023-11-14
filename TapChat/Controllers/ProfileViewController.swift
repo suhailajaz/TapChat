@@ -48,6 +48,8 @@ extension ProfileViewController{
             
             AuthManager.shared.logoutUser { success in
                 if success{
+                    UserDefaults.standard.setValue(nil, forKey: "email")
+                    UserDefaults.standard.setValue(nil, forKey: "name")
                     self?.showLoginScreen()
                 }
             }

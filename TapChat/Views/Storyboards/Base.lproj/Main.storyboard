@@ -42,6 +42,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Chats" id="JQY-dt-CjV"/>
                     <connections>
+                        <outlet property="lblNoConversations" destination="In5-91-0qS" id="Az5-za-IaV"/>
                         <outlet property="tblConversations" destination="e28-2x-Dl7" id="WOJ-DJ-IL9"/>
                     </connections>
                 </viewController>

@@ -23,6 +23,20 @@ struct AuthManager{
         
             print("Created User: \(result.user)")
             UserDefaults.standard.set(user.userEmail, forKey: "email")
+            let safeEmail = DatabaseManager.shared.getSafeEmail(mail: user.userEmail)
+            DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                switch result{
+                case .success(let data):
+                    guard let userData = data as? [String:Any],
+                          let firstName = userData["first_name"],
+                          let lastName = userData["last_name"] else{
+                        return
+                    }
+                    UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                case .failure(let error):
+                    print("Failed to read data for path: \(error)")
+                }
+            }
             completion(true)
             
         }

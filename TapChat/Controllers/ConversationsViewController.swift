@@ -11,8 +11,12 @@ import JGProgressHUD
 class ConversationsViewController: UIViewController {
     
     @IBOutlet var tblConversations: UITableView!
+    
+    @IBOutlet var lblNoConversations: UILabel!
     let spinner = JGProgressHUD(style: .dark)
     private var conversations = [Conversation]()
+    private var loginObserver: NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +28,10 @@ class ConversationsViewController: UIViewController {
         
         fetchConversations()
         startListeningForConversations()
+        
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLoginNotification, object: nil, queue: .main, using: { [weak self] _ in
+            self?.startListeningForConversations()
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,16 +56,36 @@ extension ConversationsViewController: UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let model = conversations[indexPath.row]
+        openConversation(model)
+    }
+    
+    func openConversation(_ model:Conversation){
         let vc = storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatViewController
-        vc.otherUserEmail = conversations[indexPath.row].otherUserEmail
-        vc.title = conversations[indexPath.row].name
-        vc.conversationId = conversations[indexPath.row].id
+        vc.otherUserEmail = model.otherUserEmail
+        vc.title = model.name
+        vc.conversationId = model.id
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete{
+//            
+//            let conversationID = conversations[indexPath.row].id
+//            tableView.beginUpdates()
+//            DatabaseManager.shared.deleteConversation(conversationId: conversationID) { [weak self] success in
+//                self?.conversations.remove(at: indexPath.row)
+//                tableView.deleteRows(at: [indexPath], with: .left)
+//            }
+//            tableView.endUpdates()
+//        }
+//    }
 }
 
 //userdefined methods
@@ -71,7 +99,24 @@ extension ConversationsViewController{
         let vc = StoryBoards.newConversations.instantiateViewController(withIdentifier: "NewConvos") as! NewConversationsViewController
         vc.completion = { [weak self] result in
             print("\(result)")
-            self?.createNewConversation(result: result)
+            let currentConversation = self?.conversations
+            if let targetConversation = currentConversation?.first(where: {
+                $0.otherUserEmail == DatabaseManager.shared.getSafeEmail(mail: result.email)
+            }){
+                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatViewController
+                vc.otherUserEmail = targetConversation.otherUserEmail
+                vc.isNewConversation = false
+                vc.title = targetConversation.name
+                vc.conversationId = targetConversation.id
+                vc.navigationItem.largeTitleDisplayMode = .never
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                self?.createNewConversation(result: result)
+            }
+                
+                
+                
+          
             
         }
         let navController = UINavigationController(rootViewController: vc)
@@ -93,19 +138,35 @@ extension ConversationsViewController{
         guard let currentUserEmail = getEmail() else{
             return
         }
+        if let observer = loginObserver{
+            NotificationCenter.default.removeObserver(observer)
+        }
         let safeCurrentUserEmail = DatabaseManager.shared.getSafeEmail(mail: currentUserEmail)
         DatabaseManager.shared.getAllConversations(for: safeCurrentUserEmail) { [weak self] result in
             switch result{
             case .success(let conversations):
                 guard !conversations.isEmpty else{
+                    DispatchQueue.main.async{
+                        self?.tblConversations.isHidden = true
+                        self?.lblNoConversations.isHidden = false
+                    }
+                 
                     print("Conversation are empty")
                     return
                 }
+                
+             
                 self?.conversations = conversations
                 DispatchQueue.main.async{
+                    self?.tblConversations.isHidden = false
+                    self?.lblNoConversations.isHidden = true
                     self?.tblConversations.reloadData()
                 }
             case .failure(let error):
+                DispatchQueue.main.async{
+                    self?.tblConversations.isHidden = true
+                    self?.lblNoConversations.isHidden = false
+                }
                 print("Failed to get conversations: \(error)")
             }
         }

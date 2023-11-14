@@ -17,14 +17,14 @@ final class StorageManager{
     public typealias UploadPictureCompletion = (Result<String,Error>)->Void
     
     public func uploadProfilepicture(with data: Data, fileName: String, completion: @escaping UploadPictureCompletion){
-        storage.child("images/\(fileName)").putData(data, metadata: nil) { metadata, error in
+        storage.child("images/\(fileName)").putData(data, metadata: nil) {[weak self] metadata, error in
             guard error == nil else{
                 print("failed to upload profile image data to firebase")
                 completion(.failure(StorageErrors.failedToUpload))
                 return
             }
             
-            self.storage.child("images/\(fileName)").downloadURL { url, error in
+            self?.storage.child("images/\(fileName)").downloadURL { url, error in
                 guard let url = url else{
                     print("Failed to get download url")
                     completion(.failure(StorageErrors.failedToGetDownloadUrl))
@@ -40,14 +40,14 @@ final class StorageManager{
     }
     ///uploads picture to firebase storage that will be sent inside a chat
     public func uploadMessagePhoto(with data: Data, fileName: String, completion: @escaping UploadPictureCompletion){
-        storage.child("message_images/\(fileName)").putData(data, metadata: nil) { metadata, error in
+        storage.child("message_images/\(fileName)").putData(data, metadata: nil) { [weak self] metadata, error in
             guard error == nil else{
                 print("failed to upload coversation image data to firebase")
                 completion(.failure(StorageErrors.failedToUpload))
                 return
             }
             
-            self.storage.child("message_images/\(fileName)").downloadURL { url, error in
+            self?.storage.child("message_images/\(fileName)").downloadURL { url, error in
                 guard let url = url else{
                     print("Failed to get download url")
                     completion(.failure(StorageErrors.failedToGetDownloadUrl))

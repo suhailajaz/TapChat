@@ -49,6 +49,7 @@ extension LoginViewController{
             AuthManager.shared.loginUser(request) { success in
                 self.spinner.dismiss()
                 if success{
+                    NotificationCenter.default.post(name: .didLoginNotification, object: nil)
                     self.navigationController?.dismiss(animated: true)
                 }
             }

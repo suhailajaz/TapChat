@@ -3,4 +3,148 @@
    uuid = "81E51351-13CA-4229-986E-78514BEB63A6"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9801B352-66EE-4B65-A3B1-7C0237A84444"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TapChat/Controllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "070B1263-0F32-4D80-A348-BC9C6D171EB0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TapChat/Resources/DatabaseManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "createNewConversation(with:name:firstMessage:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "070B1263-0F32-4D80-A348-BC9C6D171EB0 - 2bf08c85ba5d60fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TapChat.DatabaseManager.createNewConversation(with: Swift.String, name: Swift.String, firstMessage: TapChat.Message, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Resources/DatabaseManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "070B1263-0F32-4D80-A348-BC9C6D171EB0 - 2bf08c85ba5d60fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TapChat.DatabaseManager.createNewConversation(with: Swift.String, name: Swift.String, firstMessage: TapChat.Message, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Resources/DatabaseManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "384">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC31CDA2-24D9-4D2D-9186-C7ECC404293B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TapChat/Controllers/ConversationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "startListeningForConversations()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DC31CDA2-24D9-4D2D-9186-C7ECC404293B - 967875bab39e7976"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;TapChat.Conversation&gt;, Swift.Error&gt;) -&gt; () in TapChat.ConversationsViewController.startListeningForConversations() -&gt; ()"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ConversationsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "DC31CDA2-24D9-4D2D-9186-C7ECC404293B - 967875bab39e7976"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;TapChat.Conversation&gt;, Swift.Error&gt;) -&gt; () in TapChat.ConversationsViewController.startListeningForConversations() -&gt; ()"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ConversationsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "DC31CDA2-24D9-4D2D-9186-C7ECC404293B - 967875bab39e7976"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;TapChat.Conversation&gt;, Swift.Error&gt;) -&gt; () in TapChat.ConversationsViewController.startListeningForConversations() -&gt; ()"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ConversationsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "DC31CDA2-24D9-4D2D-9186-C7ECC404293B - 967875bab39e7976"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;TapChat.Conversation&gt;, Swift.Error&gt;) -&gt; () in TapChat.ConversationsViewController.startListeningForConversations() -&gt; ()"
+                  moduleName = "TapChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suhail/Desktop/TapChat/TapChat/Controllers/ConversationsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "280">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

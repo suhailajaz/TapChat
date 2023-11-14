@@ -13,13 +13,14 @@ final class DatabaseManager{
     
     static let shared = DatabaseManager()
     private let database = Database.database().reference()
+    private init() {} 
     
 }
 
 // MARK: - Takes any path in the database and retrurns its value
 extension DatabaseManager{
     public func getDataFor(path:String, completion: @escaping (Result<Any,Error>)->Void){
-        self.database.child("\(path)").observeSingleEvent(of: .value) { snapshot in
+        database.child("\(path)").observeSingleEvent(of: .value) { snapshot in
             guard let value = snapshot.value else{
                 completion(.failure(DatabaseErrors.failedToFetch))
                 return
@@ -40,7 +41,7 @@ extension DatabaseManager{
         let safeEmail = getSafeEmail(mail: email)
         database.child(safeEmail).observeSingleEvent(of: .value) { snapshot in
             //even if a user already exists, this key returns flase....
-            guard  snapshot.value as? String != nil  else{
+            guard  snapshot.value as? [String:String] != nil  else{
                 completion(false)
                 return
             }
@@ -57,7 +58,7 @@ extension DatabaseManager{
         database.child(safeEmail).setValue([
             "first_name" : user.fName,
             "last_name"  : user.lName
-        ]) { error, _ in
+        ]) {[weak self] error, _ in
             guard error == nil else{
                 print("Failed to write to database")
                 completion(false)
@@ -65,7 +66,7 @@ extension DatabaseManager{
             }
             
             //insert the newly added user to "users" collection which conatins all the users
-            self.database.child("users").observeSingleEvent(of: .value) { snapshot in
+            self?.database.child("users").observeSingleEvent(of: .value) { snapshot in
                 
                 if var usersCollection = snapshot.value as? [[String:String]]{
                     //appned to users
@@ -74,7 +75,7 @@ extension DatabaseManager{
                         "email" :  safeEmail
                     ]
                     usersCollection.append(newElement)
-                    self.database.child("users").setValue(usersCollection) { error, _ in
+                    self?.database.child("users").setValue(usersCollection) { error, _ in
                         guard error == nil else{
                             completion(false)
                             return
@@ -90,7 +91,7 @@ extension DatabaseManager{
                             "email" : safeEmail
                         ]
                     ]
-                    self.database.child("users").setValue(newCollection) { error, _ in
+                    self?.database.child("users").setValue(newCollection) { error, _ in
                         guard error == nil else{
                             completion(false)
                             return
@@ -478,7 +479,7 @@ extension DatabaseManager{
         }
         let safeMyEmail = DatabaseManager.shared.getSafeEmail(mail: myEmail)
         
-        self.database.child("\(safeMyEmail)/conversations").observeSingleEvent(of: .value) { snapshot in
+        database.child("\(safeMyEmail)/conversations").observeSingleEvent(of: .value) { [weak self] snapshot in
             guard var currentUserConversations = snapshot.value as? [[String:Any]] else{
                 completion(false)
                 return
@@ -506,7 +507,7 @@ extension DatabaseManager{
                 return
             }
             currentUserConversations[position] = finalConversation
-            self.database.child("\(safeMyEmail)/conversations").setValue(currentUserConversations) { error, _ in
+            self?.database.child("\(safeMyEmail)/conversations").setValue(currentUserConversations) { error, _ in
                 guard error == nil else{
                     completion(false)
                     return
@@ -518,7 +519,7 @@ extension DatabaseManager{
     //updates the recipient user latest message
     private  func updateRecipientUserLatestMessage(coversationID: String,otherUserEmail: String,dateString: String,message: String, completion: @escaping (Bool)->Void){
         
-        self.database.child("\(otherUserEmail)/conversations").observeSingleEvent(of: .value) { snapshot in
+        database.child("\(otherUserEmail)/conversations").observeSingleEvent(of: .value) { [weak self] snapshot in
             guard var otherUserConversations = snapshot.value as? [[String:Any]] else{
                 completion(false)
                 return
@@ -546,12 +547,44 @@ extension DatabaseManager{
                 return
             }
             otherUserConversations[position] = finalConversation
-            self.database.child("\(otherUserEmail)/conversations").setValue(otherUserConversations) { error, _ in
+            self?.database.child("\(otherUserEmail)/conversations").setValue(otherUserConversations) { error, _ in
                 guard error == nil else{
                     completion(false)
                     return
                 }
                 completion(true)
+            }
+        }
+    }
+    ///Deletes a conversation from the conversation list of the user who deleted it
+    public func deleteConversation(conversationId: String,completion: @escaping (Bool)->Void){
+        
+        guard let email = getEmail() else{
+            return
+        }
+        let safeEmail = DatabaseManager.shared.getSafeEmail(mail: email)
+        
+        let ref = database.child("\(safeEmail)/conversations")
+        ref.observeSingleEvent(of: .value) { snapshot in
+            if var conversations = snapshot.value as? [[String:Any]]{
+                var positionToRemove = 0
+                for conversation in conversations{
+                    if let id = conversation["id"] as? String,
+                       id == conversationId{
+                        print("found conversation to delete")
+                        break
+                    }
+                    positionToRemove += 1
+                }
+                conversations.remove(at: positionToRemove)
+                ref.setValue(conversations) { error, _ in
+                    guard error == nil else{
+                        completion(false)
+                        return
+                    }
+                    print("deleted conversation")
+                    completion(true)
+                }
             }
         }
     }
