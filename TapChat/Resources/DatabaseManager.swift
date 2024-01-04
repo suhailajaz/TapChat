@@ -13,7 +13,7 @@ final class DatabaseManager{
     
     static let shared = DatabaseManager()
     private let database = Database.database().reference()
-    private init() {} 
+    private init() {}
     
 }
 
